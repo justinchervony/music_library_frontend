@@ -1,4 +1,5 @@
 import { useState } from "react"
+import axios from "axios";
 
 
 
@@ -18,9 +19,20 @@ const CreateSong = (props) => {
             genre: genre,
             release_date, release_date,
         };
-        console.log(newSong);
-        props.addNewSongProp(newSong)
+        createSong(newSong);
     }
+
+
+    async function createSong(song){
+        const inputSong = await axios.post('http://127.0.0.1:8000/api/music/', {
+            title: song.title,
+            artist: song.artist,
+            album: song.album,
+            genre: song.genre,
+            release_date: song.release_date
+        });
+        console.log(inputSong);
+      }
 
     return (
         <form onSubmit={handleCreate}>
