@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 import DisplaySongs from './components/DisplaySongs';
+import CreateSong from './components/CreateSong';
 
 
 
@@ -18,6 +19,11 @@ function App() {
     setSongs(response.data);
   }
 
+  function addNewSong(song){
+    let tempSongs = [...songs, song];
+    setSongs(tempSongs);
+  }
+
   return (
     <div>
       <div>
@@ -25,6 +31,9 @@ function App() {
       </div>
       <div>
         <DisplaySongs songCollection={songs} />
+      </div>
+      <div>
+        <CreateSong addNewSongProp={addNewSong} />
       </div>
     </div>
   );

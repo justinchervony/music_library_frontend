@@ -5,10 +5,11 @@ function DisplaySongs(props){
             {tempArray.map((song, index) => {
                 return (
                     <div>
-                        <p>{song.title}</p>
-                        <p>{song.artist}</p>
-                        <p>{song.genre}</p>
-                        <p>{song.release_date}</p>
+                        <ul>{song.title}</ul>
+                        <ul>{song.artist}</ul>
+                        <ul>{song.album}</ul>
+                        <ul>{song.genre}</ul>
+                        <ul>{song.release_date}</ul>
                     </div>
                 );
             })}
