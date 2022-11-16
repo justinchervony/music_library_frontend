@@ -5,6 +5,10 @@ function deleteSong(id){
     window.location.reload(true);
 }
 
+function searchSong(title, artist){
+    window.open(`https://www.youtube.com/results?search_query=${title}+${artist}`)
+}
+
 function DisplaySongs(props){
     let tempArray = props.songCollection
     return (
@@ -19,6 +23,9 @@ function DisplaySongs(props){
                                 <ul><strong>Album: </strong>{song.album}</ul>
                                 <ul><strong>Genre: </strong>{song.genre}</ul>
                                 <ul><strong>Release Date: </strong>{song.release_date}</ul>
+                            </div>
+                            <div>
+                                <button type="button" onClick={() => searchSong(song.title, song.artist)}>Search on Youtube</button>
                             </div>
                             <div>
                                 <button type="button" value={song.id} onClick={(event) => deleteSong(event.target.value)}>Delete Song</button>
