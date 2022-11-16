@@ -17,8 +17,9 @@ const CreateSong = (props) => {
             artist: artist,
             album: album,
             genre: genre,
-            release_date, release_date,
+            release_date: release_date,
         });
+        console.log(inputSong);
       }
 
     return (

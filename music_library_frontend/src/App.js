@@ -2,6 +2,8 @@ import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 import DisplaySongs from './components/DisplaySongs';
 import CreateSong from './components/CreateSong';
+import FilterSong from './components/FilterSong';
+
 
 
 
@@ -24,6 +26,15 @@ function App() {
     setSongs(tempSongs);
   }
 
+  function songSearch(filteredInput){
+    let tempArray = songs.filter(function(song){
+      if (song.title.includes(filteredInput)){
+        return true;
+      }
+    });
+    setSongs(tempArray);
+  }
+
   return (
     <div>
       <div className='titleBanner'>
@@ -32,6 +43,9 @@ function App() {
       </div>
       <div className='addSongBanner'>
         <CreateSong addNewSongProp={addNewSong} />
+      </div>
+      <div>
+        <FilterSong songSearchProp={songSearch} />
       </div>
       <div>
         <DisplaySongs songCollection={songs} />
