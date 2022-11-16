@@ -11,3 +11,25 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+
+.songCollection {
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: row;
+}
+
+.songGrid {
+  display: flex;
+  justify-content: center;
+  margin: .5rem;
+}
+
+.songBox{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  border-style: double;
+  border-color: black;
+  padding: 1rem;
+  padding-right: 2rem;
+}

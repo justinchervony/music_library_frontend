@@ -1,15 +1,29 @@
+import axios from "axios";
+
+function deleteSong(id){
+    axios.delete(`http://127.0.0.1:8000/api/music/${id}`);
+    window.location.reload(true);
+}
+
 function DisplaySongs(props){
     let tempArray = props.songCollection
     return (
-        <body>
+        <body className="songCollection">
             {tempArray.map((song, index) => {
                 return (
-                    <div>
-                        <ul>{song.title}</ul>
-                        <ul>{song.artist}</ul>
-                        <ul>{song.album}</ul>
-                        <ul>{song.genre}</ul>
-                        <ul>{song.release_date}</ul>
+                    <div className="songGrid">
+                        <div className="songBox">
+                            <div>
+                                <ul><strong>Title: </strong>{song.title}</ul>
+                                <ul><strong>Artist: </strong>{song.artist}</ul>
+                                <ul><strong>Album: </strong>{song.album}</ul>
+                                <ul><strong>Genre: </strong>{song.genre}</ul>
+                                <ul><strong>Release Date: </strong>{song.release_date}</ul>
+                            </div>
+                            <div>
+                                <button type="button" value={song.id} onClick={(event) => deleteSong(event.target.value)}>Delete Song</button>
+                            </div>
+                        </div>
                     </div>
                 );
             })}

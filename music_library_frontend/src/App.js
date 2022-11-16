@@ -27,9 +27,6 @@ function App() {
   return (
     <div>
       <div>
-        <button onClick={() => getAllSongs()}>Get All Songs</button>
-      </div>
-      <div>
         <DisplaySongs songCollection={songs} />
       </div>
       <div>
