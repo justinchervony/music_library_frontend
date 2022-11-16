@@ -5,6 +5,7 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  background-color: gray;
 }
 
 code {
@@ -12,10 +13,32 @@ code {
     monospace;
 }
 
+.titleBanner {
+  background-color: black;
+  color: antiquewhite;
+  height: 5rem;
+  margin-top: -1.5rem;
+  margin-bottom: 1rem;
+  text-align: right;
+}
+
+.titleBanner h3 {
+  margin-right: 1rem;
+}
+
+.addSongBanner {
+  margin: 1rem;
+}
+
+.addSongBanner h4 {
+  margin-bottom: .5rem;
+}
+
 .songCollection {
   display: flex;
   flex-wrap: wrap;
   flex-direction: row;
+  justify-content: center;
 }
 
 .songGrid {
@@ -28,8 +51,15 @@ code {
   display: flex;
   flex-direction: column;
   align-items: center;
+  background-color: antiquewhite;
   border-style: double;
   border-color: black;
   padding: 1rem;
   padding-right: 2rem;
+  transition: all .3s ease-in-out;
+  transition: all .3s ease-in-out;
+}
+
+.songBox:hover{
+  transform: scale(1.1)
 }

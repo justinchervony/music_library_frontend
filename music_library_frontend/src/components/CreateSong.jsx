@@ -23,10 +23,11 @@ const CreateSong = (props) => {
 
     return (
         <form onSubmit={createSong}>
-            <input type={"text"} value={title} onChange={(event) => setTitle(event.target.value)} />
-            <input type={"text"} value={artist} onChange={(event) => setArtist(event.target.value)} />
-            <input type={"text"} value={album} onChange={(event) => setAlbum(event.target.value)} />
-            <input type={"text"} value={genre} onChange={(event) => setGenre(event.target.value)} />
+            <h4>Add a Song</h4>
+            <input type={"text"} value={title} placeholder = "Title" onChange={(event) => setTitle(event.target.value)} />
+            <input type={"text"} value={artist} placeholder = "Artist" onChange={(event) => setArtist(event.target.value)} />
+            <input type={"text"} value={album} placeholder = "Album" onChange={(event) => setAlbum(event.target.value)} />
+            <input type={"text"} value={genre} placeholder = "Genre" onChange={(event) => setGenre(event.target.value)} />
             <input type={"date"} value={release_date} onChange={(event) => setReleaseDate(event.target.value)} />
             <button type='submit' className="submitButton">Create</button>
         </form>

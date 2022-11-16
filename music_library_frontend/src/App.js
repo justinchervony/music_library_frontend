@@ -26,11 +26,15 @@ function App() {
 
   return (
     <div>
-      <div>
-        <DisplaySongs songCollection={songs} />
+      <div className='titleBanner'>
+        <br></br>
+        <h3>Music Library Database</h3>
+      </div>
+      <div className='addSongBanner'>
+        <CreateSong addNewSongProp={addNewSong} />
       </div>
       <div>
-        <CreateSong addNewSongProp={addNewSong} />
+        <DisplaySongs songCollection={songs} />
       </div>
     </div>
   );
