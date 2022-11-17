@@ -26,9 +26,9 @@ function App() {
     setSongs(tempSongs);
   }
 
-  function songSearch(filteredInput){
+  function songSearch([filteredInput, filteredCategory]){
     let tempArray = songs.filter(function(song){
-      if (song.title.includes(filteredInput)){
+      if (song[filteredCategory].includes(filteredInput)){
         return true;
       }
     });
@@ -44,8 +44,8 @@ function App() {
       <div className='addSongBanner'>
         <CreateSong addNewSongProp={addNewSong} />
       </div>
-      <div>
-        <FilterSong songSearchProp={songSearch} />
+      <div className='searchSongBanner'>
+        <FilterSong songSearchProp={songSearch} songsRestProp={getAllSongs} />
       </div>
       <div>
         <DisplaySongs songCollection={songs} />

@@ -1,5 +1,6 @@
 import axios from "axios";
 
+
 function deleteSong(id){
     axios.delete(`http://127.0.0.1:8000/api/music/${id}`);
     window.location.reload(true);
@@ -25,10 +26,10 @@ function DisplaySongs(props){
                                 <ul><strong>Release Date: </strong>{song.release_date}</ul>
                             </div>
                             <div>
-                                <button type="button" onClick={() => searchSong(song.title, song.artist)}>Search on Youtube</button>
+                                <button type="button" onClick={() => searchSong(song.title, song.artist)}>Search on YouTube</button>
                             </div>
                             <div>
-                                <button type="button" value={song.id} onClick={(event) => deleteSong(event.target.value)}>Delete Song</button>
+                                <button className="deleteButton" type="button" value={song.id} onClick={(event) => deleteSong(event.target.value)}>Delete Song</button>
                             </div>
                         </div>
                     </div>
